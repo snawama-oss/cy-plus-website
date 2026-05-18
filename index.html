@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社Cyplus | 大阪の営業代行・イベント支援・コンサルティング</title>
+  <meta name="description" content="大阪発の営業代行・イベント支援・コンサルティング会社、株式会社Cyplus。テレアポ・訪問営業・インサイドセールスからイベントスタッフ派遣まで、BtoB企業の新規開拓を全力サポート。大阪市北区東天満。">
+  <link rel="canonical" href="https://cy-plus.com">
+  <meta name="keywords" content="営業代行 大阪,テレアポ 大阪,インサイドセールス 大阪,イベント派遣 大阪,営業支援 大阪,BtoB営業代行,フォトスタジオ 大阪,コンサルティング 大阪,Cyplus,シープラス">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Noto+Sans+JP:wght@300;400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--black:#111;--dark:#1a1a1a;--mid:#888;--lgray:#f7f6f3;--border:#ece9f0;--white:#fff;--accent:#9b7fb6;--accent-bg:#f5f0fa;--accent-dark:#7a5fa0}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);background:var(--white);line-height:1.7;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+
+    @keyframes cL{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+    @keyframes cR{from{transform:translateX(0)}to{transform:translateX(100%)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes slideUp{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes slideLeft{from{opacity:0;transform:translateX(-48px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes slideRight{from{opacity:0;transform:translateX(48px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes scaleIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+    @keyframes lineGrow{from{width:0}to{width:60px}}
+    @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+    @keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+    /* CURTAIN */
+    .curtain{position:fixed;top:0;width:50%;height:100vh;background:var(--dark);z-index:200;pointer-events:none}
+    .curtain-l{left:0;animation:cL 1s cubic-bezier(.77,0,.18,1) .2s forwards}
+    .curtain-r{right:0;animation:cR 1s cubic-bezier(.77,0,.18,1) .2s forwards}
+
+    /* NAV */
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 0;animation:fadeIn .5s ease 1s both}
+    .hi{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 40px}
+    nav{display:flex;gap:28px;align-items:center}
+    nav a{font-size:.8rem;color:var(--mid);font-weight:400;letter-spacing:.04em;transition:color .2s;position:relative}
+    nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--accent);transition:width .25s}
+    nav a:hover{color:var(--accent)}
+    nav a:hover::after{width:100%}
+    .nav-cta{background:var(--accent);color:var(--white)!important;padding:8px 16px;border-radius:100px;font-size:.76rem!important;font-weight:500!important;transition:opacity .2s!important}
+    .nav-cta::after,.nav-salon::after{display:none!important}
+    .nav-cta:hover,.nav-salon:hover{opacity:.82}
+    .nav-salon{background:var(--accent);color:var(--white)!important;padding:8px 16px;border-radius:100px;font-size:.76rem!important;font-weight:500!important;transition:opacity .2s!important}
+    .mob{display:none;background:none;border:none;cursor:pointer;font-size:1.3rem;color:var(--dark)}
+
+    /* HERO */
+    .hero{min-height:100vh;display:flex;align-items:center;padding:120px 40px 80px;background:linear-gradient(-45deg,#fdf6ff,#f2eeff,#e8faf5,#faf0ff);background-size:400% 400%;animation:gradShift 12s ease infinite;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;right:-120px;top:10%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(155,127,182,.12) 0%,rgba(184,232,224,.08) 50%,transparent 70%);pointer-events:none;animation:floatY 9s ease-in-out infinite}
+    .hero::after{content:'Cy+';position:absolute;bottom:-80px;right:-10px;font-family:'Playfair Display',serif;font-size:22vw;font-weight:500;color:rgba(155,127,182,.04);letter-spacing:.05em;pointer-events:none;line-height:1}
+    .hi2{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+    .hero-text{animation:slideLeft .9s cubic-bezier(.22,1,.36,1) .5s both}
+    .eyebrow{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-family:'DM Sans',sans-serif;font-weight:700;margin-bottom:20px;display:block}
+
+    /* 文字の強弱 - ここが核心 */
+    .hero h1{font-family:'Playfair Display',serif;font-size:4rem;font-weight:500;line-height:1.1;margin-bottom:24px;color:var(--dark);letter-spacing:-.02em}
+
+    .hero-sub{font-size:1rem;color:var(--mid);line-height:1.85;margin-bottom:40px;font-weight:400;animation:slideUp .7s ease 1.5s both}
+    .hero-sub strong{color:var(--dark);font-weight:700}
+    .btn-g{display:flex;gap:14px;flex-wrap:wrap;animation:slideUp .7s ease 1.7s both}
+    .hero-img{animation:scaleIn 1s cubic-bezier(.22,1,.36,1) .7s both;border-radius:16px;overflow:hidden;height:560px;box-shadow:0 48px 96px rgba(155,127,182,.2)}
+    .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* BUTTONS */
+    .btn{display:inline-block;padding:15px 38px;font-size:.84rem;letter-spacing:.05em;font-family:'DM Sans',sans-serif;font-weight:600;border-radius:100px;transition:all .25s;cursor:pointer;border:none}
+    .btn-pastel{background:var(--accent);color:var(--white);box-shadow:0 6px 24px rgba(155,127,182,.35)}
+    .btn-pastel:hover{background:var(--accent-dark);transform:translateY(-3px);box-shadow:0 12px 32px rgba(155,127,182,.45)}
+    .btn-pastel-o{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+    .btn-pastel-o:hover{background:var(--accent-bg);transform:translateY(-3px)}
+    .btn-d{background:var(--dark);color:var(--white)}
+    .btn-d:hover{background:#333}
+    .btn-o{background:var(--accent);color:var(--white)}
+    .btn-o:hover{opacity:.85}
+    .btn-a{background:var(--accent);color:var(--white)}
+    .btn-a:hover{opacity:.88}
+
+    /* SCROLL REVEAL */
+    .sec{padding:96px 40px}
+    .si{max-width:1200px;margin:0 auto}
+    .rv{opacity:0;transform:translateY(48px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+    .rv.on{opacity:1;transform:translateY(0)}
+    .rvl{opacity:0;transform:translateX(-48px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+    .rvl.on{opacity:1;transform:translateX(0)}
+    .rvr{opacity:0;transform:translateX(48px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+    .rvr.on{opacity:1;transform:translateX(0)}
+
+    /* SECTION COMMON */
+    .eyebrow-s{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-family:'DM Sans',sans-serif;font-weight:700;margin-bottom:14px;display:block}
+    h2{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:500;line-height:1.15;color:var(--dark);margin-bottom:14px}
+    .h2-kw{color:var(--accent)}
+    .sec-lead{font-size:.96rem;color:var(--mid);line-height:1.9;font-weight:400;max-width:520px}
+    .acc-line{width:48px;height:3px;background:var(--accent);border-radius:2px;margin:16px 0 32px}
+
+    /* ABOUT */
+    .about{background:var(--lgray)}
+    .ag{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .about-head h2{font-size:3.2rem}
+    .about-head .big{font-size:1.2rem;color:var(--dark);font-weight:400;margin-bottom:16px;font-family:'Playfair Display',serif}
+    .acard{background:var(--white);padding:48px;border-radius:12px;box-shadow:0 4px 32px rgba(155,127,182,.08)}
+    .irow{padding:18px 0;border-bottom:1px solid var(--border)}
+    .irow:last-child{border-bottom:none}
+    .ilabel{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-family:'DM Sans',sans-serif;font-weight:700;display:block;margin-bottom:5px}
+    .ival{font-size:.9rem;color:var(--dark);line-height:1.75;font-weight:400}
+
+    /* SERVICES */
+    .services{background:var(--white)}
+    .sh{margin-bottom:56px}
+    .sg{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .sc{background:var(--lgray);padding:44px 40px;border-radius:12px;transition:transform .3s,box-shadow .3s;border:1.5px solid transparent}
+    .sc:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(155,127,182,.12);border-color:rgba(155,127,182,.2)}
+    .sn{font-family:'DM Sans',sans-serif;font-size:.66rem;letter-spacing:.2em;color:var(--accent);margin-bottom:12px;font-weight:700;display:block}
+    .sc h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:500;margin-bottom:12px;color:var(--dark)}
+    .sc p{font-size:.88rem;color:var(--mid);line-height:1.85;margin-bottom:16px;font-weight:400}
+    .sl{list-style:none}
+    .sl li{font-size:.84rem;color:var(--mid);padding:5px 0 5px 16px;font-weight:400;position:relative}
+    .sl li::before{content:'·';position:absolute;left:0;color:var(--accent);font-size:1.2rem;top:2px;line-height:1}
+    .sc-sales{background:linear-gradient(135deg,#f0ebfa 0%,#e4f5ef 100%);border:1.5px solid rgba(155,127,182,.25)}
+    .sc-sales:hover{box-shadow:0 16px 48px rgba(155,127,182,.18);border-color:rgba(155,127,182,.4)}
+
+    /* DETAIL SECTIONS */
+    .dg{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .dg.rev{direction:rtl}
+    .dg.rev>*{direction:ltr}
+    .di{border-radius:16px;overflow:hidden;height:480px;position:relative;box-shadow:0 24px 64px rgba(155,127,182,.15)}
+    .di img{width:100%;height:100%;object-fit:cover;display:block}
+    .dc p{font-size:.92rem;color:var(--mid);line-height:1.88;margin-bottom:18px;font-weight:400}
+    .dc h2{font-size:2.4rem}
+    .dbox{background:var(--white);padding:24px 28px;border-radius:8px;margin:20px 0;border-left:4px solid var(--accent)}
+    .dbox h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;margin-bottom:12px;color:var(--dark)}
+    .dl{list-style:none}
+    .dl li{font-size:.88rem;color:var(--mid);padding:5px 0 5px 16px;font-weight:400;position:relative}
+    .dl li::before{content:'·';position:absolute;left:0;color:var(--accent);font-size:1.2rem;top:2px;line-height:1}
+
+    /* SALON */
+    .salg{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .sali{border-radius:16px;overflow:hidden;height:520px;position:relative;box-shadow:0 24px 64px rgba(155,127,182,.15)}
+    .sali img{width:100%;height:100%;object-fit:cover;display:block}
+    .salc p{font-size:.92rem;color:var(--mid);line-height:1.88;margin-bottom:18px;font-weight:400}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+    .tag{background:var(--accent-bg);color:var(--accent);font-size:.78rem;padding:6px 14px;border-radius:100px;font-family:'DM Sans',sans-serif;font-weight:600}
+
+    /* WORKS */
+    .works{background:var(--lgray)}
+    .wg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+    .wc{background:var(--white);padding:32px;border-radius:12px;transition:transform .3s,box-shadow .3s}
+    .wc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(155,127,182,.1)}
+    .wt{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:500;color:var(--dark);margin-bottom:8px}
+    .wd{font-size:.84rem;color:var(--mid);line-height:1.7;font-weight:400}
+
+    /* CONTACT */
+    .contact-sec{background:linear-gradient(135deg,#fdf6ff 0%,#e8faf5 100%);padding:96px 40px}
+
+    /* FOOTER */
+    footer{background:#2a2235;color:rgba(255,255,255,.5);padding:52px 40px 24px}
+    .fi{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px}
+    .fl{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--white);margin-bottom:8px}
+    .fb p{font-size:.8rem;line-height:1.75}
+    .fn{display:flex;gap:48px}
+    .fc h5{color:var(--white);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;font-family:'DM Sans',sans-serif;margin-bottom:12px}
+    .fc a{display:block;font-size:.82rem;margin-bottom:7px;transition:color .2s}
+    .fc a:hover{color:var(--accent)}
+    .fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;text-align:center;font-size:.75rem;max-width:1200px;margin:0 auto}
+
+    @media(max-width:900px){
+      /* LAYOUT */
+      .hi2,.ag,.dg,.dg.rev,.salg{grid-template-columns:1fr;gap:32px;direction:ltr}
+      .sg{grid-template-columns:1fr}
+      .wg{grid-template-columns:1fr 1fr}
+      .fi{flex-direction:column;gap:24px}
+      .fn{gap:20px;flex-wrap:wrap}
+      .hi{padding:0 20px}
+      /* NAV */
+      nav{display:none}
+      .mob{display:block}
+      /* TYPOGRAPHY */
+      h1{font-size:1.9rem}
+      h2{font-size:1.6rem}
+      .dc h2{font-size:1.6rem}
+      .eyebrow,.eyebrow-s{font-size:.62rem}
+      /* SECTIONS */
+      .sec{padding:52px 20px}
+      .hero{padding:88px 20px 48px;min-height:auto}
+      .hero h1{font-size:2rem}
+      .hero::after{display:none}
+      /* IMAGES */
+      .hero-img{height:260px;border-radius:10px}
+      .di{height:220px;border-radius:10px}
+      .sali{height:240px;border-radius:10px}
+      /* CARDS */
+      .sc{padding:28px 24px}
+      .acard{padding:28px 24px}
+      /* CONTACT */
+      .contact-sec{padding:52px 20px}
+      .contact-sec>div{grid-template-columns:1fr !important;gap:32px !important;padding:0 !important}
+      /* FOOTER */
+      footer{padding:40px 20px 20px}
+      .fn{flex-direction:column;gap:16px}
+      /* BUTTONS */
+      .btn-g{flex-direction:column}
+      .btn{width:100%;text-align:center}
+      /* SALON */
+      .salg{gap:32px}
+      .salon-btns{flex-direction:column}
+      /* WORKS */
+    }
+    @media(max-width:480px){
+      .h1-kw{font-size:2.6rem}
+      .wg{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="curtain curtain-l"></div>
+  <div class="curtain curtain-r"></div>
+  <header>
+    <div class="hi">
+      <a href="/" style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:500;color:var(--dark);letter-spacing:.05em">Cy<span style="color:var(--accent)">+</span>plus</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#consulting">Consulting</a>
+        <a href="#photo">Photo</a>
+        <a href="#salon">Salon</a>
+        <a href="#works">Works</a>
+        <a href="#contact">Contact</a>
+        <a href="/sales" class="nav-cta">営業代行 / イベント</a>
+        <a href="https://beauty.hotpepper.jp/kr/slnH000793263/" target="_blank" rel="noopener noreferrer" class="nav-salon">サロン予約</a>
+      </nav>
+      <button class="mob" id="mob">☰</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hi2">
+      <div class="hero-text">
+        <span class="eyebrow">Osaka Based Creative Company</span>
+        <h1>あなたの<br>ビジョンを、<br>かたちに。</h1>
+        <p class="hero-sub">ビジネス・美容・クリエイティブが交差する場所で、<br>Cyplusはあなたの可能性をひらきます。</p>
+        <div class="btn-g">
+          <a href="#services" class="btn btn-pastel">サービスを見る</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?w=800&h=1040&fit=crop" alt="Cyplus lifestyle" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="sec about" id="about">
+    <div class="si">
+      <div class="ag">
+        <div>
+          <span class="eyebrow-s rv">About Us</span>
+          <h2>株式会社Cyplus</h2>
+          <div class="acc-line"></div>
+          <p class="lead">個人事業主から中小企業まで、お客様のビジョンに寄り添い、ブランディングからプロモーションまで一貫したサポートを行います。</p>
+        </div>
+        <div class="acard">
+          <div class="irow"><span class="ilabel">事務所</span><span class="ival">〒530-0044<br>大阪府大阪市北区東天満2-2-7-303</span></div>
+          <div class="irow"><span class="ilabel">サロン・フォトスタジオ</span><span class="ival">〒530-0041<br>大阪府大阪市北区天神橋1-11-3<br>アクアスイート南森町603</span></div>
+          <div class="irow"><span class="ilabel">事業内容</span><span class="ival">コンサルティング・フォトスタジオ<br>営業代行・イベント支援・プライベートサロン</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec services" id="services">
+    <div class="si">
+      <div class="sh rv">
+        <span class="eyebrow-s">Our Services</span>
+        <h2>事業内容</h2>
+        <div class="acc-line"></div>
+      </div>
+      <div class="sg">
+        <div class="sc">
+          <p class="sn">01</p>
+          <h3>コンサルティング</h3>
+          <p>個人事業主・中小企業向けに、SNS運用・マーケティング・ブランディング・事業立ち上げを伴走支援。</p>
+          <ul class="sl"><li>SNS運用支援</li><li>マーケティング戦略</li><li>ブランディング</li><li>事業立ち上げ支援</li></ul>
+        </div>
+        <div class="sc">
+          <p class="sn">02</p>
+          <h3>フォトスタジオ</h3>
+          <p>プロフィール・ブランド写真・商品撮影・動画制作など、ブランドの世界観を表現するビジュアルを。</p>
+          <ul class="sl"><li>プロフィール撮影</li><li>ブランド写真撮影</li><li>商品撮影</li><li>動画撮影・編集</li></ul>
+        </div>
+        <div class="sc">
+          <p class="sn">03</p>
+          <h3>プライベートサロン</h3>
+          <p>大阪・南森町の完全予約制サロン。よもぎ蒸し・セルフホワイトニングで美容と体質改善を。</p>
+          <ul class="sl"><li>よもぎ蒸し</li><li>セルフホワイトニング</li><li>体質改善メニュー</li><li>完全予約制プライベート空間</li></ul>
+        </div>
+        <div class="sc">
+          <p class="sn">04</p>
+          <h3>営業代行 &amp; イベント支援</h3>
+          <p>テレアポ・訪問営業・インサイドセールスからイベントスタッフ派遣・展示会サポートまで。BtoB企業の新規開拓と現場プロモーションをトータルで支援します。</p>
+          <ul class="sl"><li>テレアポ</li><li>訪問営業</li><li>インサイドセールス</li><li>展示会サポート</li><li>イベントスタッフ派遣</li><li>PRスタッフ派遣</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="background:var(--lgray)" id="consulting">
+    <div class="si">
+      <div class="dg">
+        <div class="dc rvl">
+          <span class="eyebrow-s">Consulting</span>
+          <h2>コンサルティング</h2>
+          <div class="acc-line"></div>
+          <p>企画から実装まで、ワンストップで支援します。単なるアドバイスではなく、企画・設計・制作・運用まで実行フェーズを含めてサポートできることが特徴です。</p>
+          <div class="dbox"><h4>対応領域</h4><ul class="dl"><li>事業立ち上げ支援</li><li>マーケティング設計</li><li>SNS運用支援</li><li>ブランディング設計</li><li>Webサイト / LP制作</li></ul></div>
+          <a href="#contact" class="btn btn-pastel" style="margin-top:8px">ご相談はこちら</a>
+        </div>
+        <div class="di"><img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?w=600&h=460&fit=crop" alt="コンサルティング" loading="lazy"><div class="dio"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="background:var(--white)" id="photo">
+    <div class="si">
+      <div class="dg rev">
+        <div class="dc rvr">
+          <span class="eyebrow-s">Photo Studio</span>
+          <h2>フォトスタジオ</h2>
+          <div class="acc-line"></div>
+          <p>SNS運用やブランディングに必要なビジュアルコンテンツを制作します。目的に合わせた撮影プランでブランドの世界観を表現。</p>
+          <div class="dbox"><h4>対応内容</h4><ul class="dl"><li>SNSプロフィール撮影</li><li>ブランドイメージ撮影</li><li>商品 / EC用写真撮影</li><li>動画撮影・編集</li></ul></div>
+          <a href="#contact" class="btn btn-pastel" style="margin-top:8px">撮影のご相談</a>
+        </div>
+        <div class="di"><img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&h=460&fit=crop" alt="フォトスタジオ" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="background:var(--lgray)" id="salon">
+    <div class="si">
+      <div class="salg">
+        <div class="salc">
+          <span class="eyebrow-s">Private Salon</span>
+          <h2>CY PLUS<br>プライベートサロン</h2>
+          <div class="acc-line"></div>
+          <p>大阪・南森町にある完全予約制のプライベートサロン。よもぎ蒸し・セルフホワイトニング・温活を通じて、美容と体質改善をトータルサポート。</p>
+          <p>1時間1組の贅沢な空間でお客様に寄り添います。お子様連れ・男性も歓迎。</p>
+          <div class="tags"><span class="tag">完全予約制</span><span class="tag">1時間1組</span><span class="tag">お子様連れOK</span><span class="tag">男性利用可</span></div>
+          <div class="btn-g" style="margin-top:8px">
+            <a href="https://beauty.hotpepper.jp/kr/slnH000793263/" target="_blank" rel="noopener noreferrer" class="btn btn-pastel">予約する</a>
+            <a href="#contact" class="btn btn-pastel-o">お問い合わせ</a>
+          </div>
+        </div>
+        <div class="sali"><img src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?w=600&h=500&fit=crop" alt="サロン" loading="lazy"><div class="salio"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="background:var(--white)" id="sales-detail">
+    <div class="si">
+      <div class="dg">
+        <div class="dc rvl">
+          <span class="eyebrow-s">Sales &amp; Event</span>
+          <h2>営業代行 &amp;<br>イベント支援</h2>
+          <div class="acc-line"></div>
+          <p>テレアポ・訪問営業・インサイドセールスから展示会・イベントスタッフ派遣まで。BtoB企業の新規開拓と現場プロモーションをひとつのチームでトータル支援します。</p>
+          <div class="dbox"><h4>サービス内容</h4><ul class="dl"><li>テレアポ・電話営業</li><li>訪問営業（関西〜全国）</li><li>インサイドセールス</li><li>メール・DM営業</li><li>展示会・ブース接客</li><li>イベントスタッフ・PR派遣</li></ul></div>
+          <a href="/sales" class="btn btn-pastel" style="margin-top:8px">詳細・お問い合わせ</a>
+        </div>
+        <div class="di"><img src="https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?w=600&h=460&fit=crop" alt="営業代行" loading="lazy"><div class="dio"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec works" id="works">
+    <div class="si">
+      <span class="eyebrow-s rv">Our Works</span>
+      <h2>実績</h2>
+      <div class="acc-line"></div>
+      <p class="lead">スタートアップコミュニティや企業イベントなど、多くの現場に関わりながら活動しています。</p>
+      <div class="wg">
+        <div class="wc"><div class="wt">イベント運営サポート</div><div class="wd">各種イベント・展示会の企画から運営まで幅広くサポート</div></div>
+        <div class="wc"><div class="wt">スタートアップイベント支援</div><div class="wd">起業家向けイベントのディレクション・サポート</div></div>
+        <div class="wc"><div class="wt">ブランド撮影</div><div class="wd">企業・個人のブランドイメージを表現する撮影</div></div>
+        <div class="wc"><div class="wt">商品撮影</div><div class="wd">EC・SNS用の高品質な商品撮影</div></div>
+        <div class="wc"><div class="wt">Webサイト / LP制作</div><div class="wd">企業サイトから特設ページまでトータルプロデュース</div></div>
+        <div class="wc"><div class="wt">営業代行</div><div class="wd">テレアポ・訪問営業・インサイドセールスによる新規開拓支援</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-sec" id="contact">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;padding:0 40px">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h2 style="color:var(--dark)">お問い合わせ</h2>
+        <div style="width:40px;height:1.5px;background:var(--accent);margin:16px 0 24px"></div>
+        <p style="color:var(--mid);font-size:.9rem;line-height:1.88;font-weight:300;margin-bottom:32px">サービスに関するご質問やご相談など、お気軽にお問い合わせください。</p>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="border:1px solid rgba(155,127,182,.2);padding:18px 22px;border-radius:2px;background:rgba(255,255,255,.7)">
+            <span style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-family:'DM Sans',sans-serif;font-weight:500;display:block;margin-bottom:4px">お電話</span>
+            <span style="font-size:.9rem;color:var(--dark);font-weight:300">06-7777-6913</span>
+          </div>
+          <div style="border:1px solid rgba(155,127,182,.2);padding:18px 22px;border-radius:2px;background:rgba(255,255,255,.7)">
+            <span style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-family:'DM Sans',sans-serif;font-weight:500;display:block;margin-bottom:4px">メール</span>
+            <span style="font-size:.9rem;color:var(--dark);font-weight:300">info@cy-plus.com</span>
+          </div>
+          <div style="border:1px solid rgba(155,127,182,.2);padding:18px 22px;border-radius:2px;background:rgba(255,255,255,.7)">
+            <span style="font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-family:'DM Sans',sans-serif;font-weight:500;display:block;margin-bottom:4px">受付時間</span>
+            <span style="font-size:.9rem;color:var(--dark);font-weight:300">平日 9:00〜18:00</span>
+          </div>
+        </div>
+      </div>
+      <div id="formBox" style="background:var(--white);padding:40px;border-radius:2px">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;margin-bottom:24px;color:var(--black)">お問い合わせフォーム</h3>
+        <div style="margin-bottom:14px">
+          <label style="display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);font-family:'DM Sans',sans-serif;font-weight:500;margin-bottom:6px">お名前<span style="color:var(--accent);margin-left:2px;font-size:.7rem">必須</span></label>
+          <input id="c-name" type="text" placeholder="山田 太郎" style="width:100%;border:1px solid var(--border);border-radius:2px;padding:11px 14px;font-size:.88rem;font-family:'Noto Sans JP',sans-serif;color:var(--dark);outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#9b7fb6'" onblur="this.style.borderColor='#ece9f0'">
+        </div>
+        <div style="margin-bottom:14px">
+          <label style="display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);font-family:'DM Sans',sans-serif;font-weight:500;margin-bottom:6px">メールアドレス<span style="color:var(--accent);margin-left:2px;font-size:.7rem">必須</span></label>
+          <input id="c-email" type="email" placeholder="example@company.com" style="width:100%;border:1px solid var(--border);border-radius:2px;padding:11px 14px;font-size:.88rem;font-family:'Noto Sans JP',sans-serif;color:var(--dark);outline:none;transition:border-color .2s" onfocus="this.style.borderColor='#9b7fb6'" onblur="this.style.borderColor='#ece9f0'">
+        </div>
+        <div style="margin-bottom:14px">
+          <label style="display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);font-family:'DM Sans',sans-serif;font-weight:500;margin-bottom:6px">ご興味のあるサービス</label>
+          <select id="c-service" style="width:100%;border:1px solid var(--border);border-radius:2px;padding:11px 14px;font-size:.88rem;font-family:'Noto Sans JP',sans-serif;color:var(--dark);outline:none;background:var(--white);-webkit-appearance:none">
+            <option value="">選択してください</option>
+            <option>コンサルティング</option>
+            <option>フォトスタジオ</option>
+            <option>プライベートサロン</option>
+            <option>営業代行 / イベント支援</option>
+            <option>その他・複数</option>
+          </select>
+        </div>
+        <div style="margin-bottom:16px">
+          <label style="display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);font-family:'DM Sans',sans-serif;font-weight:500;margin-bottom:6px">ご相談内容</label>
+          <textarea id="c-message" placeholder="お気軽にご記入ください" style="width:100%;border:1px solid var(--border);border-radius:2px;padding:11px 14px;font-size:.88rem;font-family:'Noto Sans JP',sans-serif;color:var(--dark);outline:none;height:88px;resize:vertical;transition:border-color .2s" onfocus="this.style.borderColor='#9b7fb6'" onblur="this.style.borderColor='#ece9f0'"></textarea>
+        </div>
+        <div id="c-err" style="font-size:.78rem;color:#E8673A;margin-bottom:10px;display:none">お名前とメールアドレスは必須です</div>
+        <button id="c-btn" onclick="submitContact()" style="width:100%;background:var(--black);color:var(--white);font-weight:500;font-size:.88rem;padding:15px;border-radius:2px;border:none;cursor:pointer;transition:background .25s;font-family:'DM Sans',sans-serif;letter-spacing:.06em">送信する →</button>
+      </div>
+      <div id="formThanks" style="display:none;background:var(--white);padding:40px;border-radius:2px;text-align:center">
+        <div style="width:52px;height:52px;border-radius:50%;background:#fdf2ee;border:1.5px solid #E8673A;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8673A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h4 style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;margin-bottom:8px">送信完了しました</h4>
+        <p style="font-size:.84rem;color:var(--mid);line-height:1.75;font-weight:300">お問い合わせありがとうございます。<br>担当者より2営業日以内にご連絡いたします。</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fi">
+      <div class="fb"><div class="fl">Cy<span style="color:var(--accent)">+</span>plus</div><p>新しい価値を創造する<br>大阪発クリエイティブカンパニー</p></div>
+      <div class="fn">
+        <div class="fc"><h5>Services</h5><a href="#consulting">コンサルティング</a><a href="#photo">フォトスタジオ</a><a href="#salon">プライベートサロン</a><a href="/sales">営業代行 / イベント</a></div>
+        <div class="fc"><h5>Company</h5><a href="#about">会社概要</a><a href="#works">実績</a><a href="#contact">お問い合わせ</a></div>
+      </div>
+    </div>
+    <div class="fbot">© 2025 Cyplus Inc. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.rv,.rvl,.rvr');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){e.target.classList.add('on');observer.unobserve(e.target)}
+      });
+    },{threshold:0.12});
+    reveals.forEach(el=>observer.observe(el));
+
+    var mobBtn=document.getElementById('mob');
+    var navEl=document.querySelector('nav');
+    var menuOpen=false;
+    mobBtn.addEventListener('click',function(){
+      menuOpen=!menuOpen;
+      if(menuOpen){
+        navEl.style.cssText='display:flex;flex-direction:column;position:fixed;top:56px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);padding:24px 28px;gap:16px;border-bottom:2px solid var(--border);z-index:99;animation:fadeIn .2s ease';
+        mobBtn.textContent='✕';
+      }else{
+        navEl.style.cssText='';
+        mobBtn.textContent='☰';
+      }
+    });
+    // メニュー内リンクをタップしたら閉じる
+    navEl.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        menuOpen=false;
+        navEl.style.cssText='';
+        mobBtn.textContent='☰';
+      });
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        var t=document.querySelector(this.getAttribute('href'));
+        if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
+      });
+    });
+    async function submitContact(){
+      var n=document.getElementById('c-name').value.trim();
+      var e=document.getElementById('c-email').value.trim();
+      var s=document.getElementById('c-service').value;
+      var m=document.getElementById('c-message').value.trim();
+      var err=document.getElementById('c-err');
+      var btn=document.getElementById('c-btn');
+      if(!n||!e){err.style.display='block';return;}
+      err.style.display='none';
+      btn.disabled=true;btn.textContent='送信中...';
+      try{
+        var res=await fetch('https://formspree.io/f/mvzdbqbz',{
+          method:'POST',
+          headers:{'Content-Type':'application/json','Accept':'application/json'},
+          body:JSON.stringify({お名前:n,メールアドレス:e,サービス:s,ご相談内容:m})
+        });
+        if(res.ok){
+          document.getElementById('formBox').style.display='none';
+          document.getElementById('formThanks').style.display='block';
+        }else{
+          btn.disabled=false;btn.textContent='送信する →';
+          alert('送信に失敗しました。お電話またはメールにてお問い合わせください。');
+        }
+      }catch(err){
+        btn.disabled=false;btn.textContent='送信する →';
+        alert('通信エラーが発生しました。お電話またはメールにてお問い合わせください。');
+      }
+    }
+  </script>
+</body>
+</html>
